@@ -1,16 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour 
+{
+	private Rigidbody2D Rigidbody;
+    public KeyCode JumpKey = KeyCode.Space;
+    public Vector2 JumpForce = new Vector2(0, 300);
 
-	// Use this for initialization
-	void Start () {
-		
+	private void Start () 
+    {
+        this.Rigidbody = this.GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	private void Update () 
+    {
+        if (Input.GetKeyUp(this.JumpKey)) 
+        {
+            this.Rigidbody.velocity = Vector2.zero;
+            this.Rigidbody.AddForce(this.JumpForce);
+        }
 	}
 }
