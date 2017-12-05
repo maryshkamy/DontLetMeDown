@@ -257,8 +257,20 @@
   <ItemGroup>
     <Compile Include="Assets\Asset Store\Fonts\Script\scriptTexttest.cs" />
     <Compile Include="Assets\Asset Store\HONETi\mobile_cartoon_GUI\Scripts\switch_scenes.cs" />
-    <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\App Environment\AppEnvironment.cs" />
+    <Compile Include="Assets\Scripts\App Environment\Environment.cs" />
+    <Compile Include="Assets\Scripts\App Environment\EnvironmentOld.cs" />
+    <Compile Include="Assets\Scripts\App Environment\Pause.cs" />
+    <Compile Include="Assets\Scripts\Character Controller\Player.cs" />
+    <Compile Include="Assets\Scripts\Menu\CheatCode.cs" />
+    <Compile Include="Assets\Scripts\Menu\Interface.cs" />
+    <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+    <Compile Include="Assets\Scripts\Prefabs\Character.cs" />
+    <Compile Include="Assets\Scripts\Prefabs\ObstacleType.cs" />
+    <Compile Include="Assets\Scripts\Spawn\Spawn.cs" />
+    <Compile Include="Assets\Scripts\Spawn\SpawnAutoDestroy.cs" />
+    <Compile Include="Assets\Scripts\Spawn\SpawnMovement.cs" />
+    <Compile Include="Assets\Scripts\Spawn\SpawnType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Store\Fonts\Documentation\JazzCreateAltKeys_BubbleFont.txt" />
