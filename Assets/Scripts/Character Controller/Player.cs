@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
 {
@@ -6,7 +8,8 @@ public class Player : MonoBehaviour
     public KeyCode JumpKey = KeyCode.Space;
     public Vector2 JumpForce = new Vector2(0, 300);
 
-	private void Start () {
+	private void Start ()
+    {
         this.Rigidbody = this.GetComponent<Rigidbody2D>();
 	}
 	
@@ -17,30 +20,44 @@ public class Player : MonoBehaviour
         Pause();
     }
 
-    private void Setup() {
-        if (AppEnvironment.Shared.Environment.IsStart) {
+    private void Setup()
+    {
+        if (AppEnvironment.Shared.Environment.IsStart)
+        {
             this.GetComponent<Rigidbody2D>().gravityScale = 2;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Portal") {
-            AppEnvironment.Shared.Environment.Gold += 1;
-        } else {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "Portal")
+        {
             AppEnvironment.Shared.Environment.IsPaused = !AppEnvironment.Shared.Environment.IsPaused;
             AppEnvironment.Shared.TimerText.gameObject.SetActive(true);
             AppEnvironment.Shared.TimerText.text = "Game Over";
         }
     }
 
-    private static void Pause() {
-        if (Input.GetKeyDown(KeyCode.P)) {
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Portal")
+        {
+            AppEnvironment.Shared.Environment.Gold += 1;
+        }
+    }
+
+    private static void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             AppEnvironment.Shared.Environment.IsPaused = !AppEnvironment.Shared.Environment.IsPaused;
         }
     }
 
-    private void Jump() {
-        if (Input.GetKeyUp(this.JumpKey) && this.transform.position.y <= 4 && AppEnvironment.Shared.Environment.IsStart) {
+    private void Jump()
+    {
+        if (Input.GetKeyUp(this.JumpKey) && this.transform.position.y <= 4 && AppEnvironment.Shared.Environment.IsStart)
+        {
             this.Rigidbody.velocity = Vector2.zero;
             this.Rigidbody.AddForce(this.JumpForce);
         }

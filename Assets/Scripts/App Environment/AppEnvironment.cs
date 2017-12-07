@@ -40,8 +40,10 @@ public class AppEnvironment : MonoBehaviour
     }
 
     private void Update() {
-        if (this._SpawnMovement) {
-            foreach (var obj in this.Environment.Obstacles) {
+        if (this._SpawnMovement)
+        {
+            foreach (var obj in this.Environment.Obstacles)
+            {
                 this._SpawnMovement.Move(obj, this.Environment.ObstaclesVelocity * Time.deltaTime);
             }
         }
@@ -51,7 +53,8 @@ public class AppEnvironment : MonoBehaviour
 
     #region Private Method(s).
 
-    private void SetupObstacles(List<Spawn> spawners) {
+    private void SetupObstacles(List<Spawn> spawners)
+    {
         this._ObstaclesSpawn = (from s in spawners
                                 where s.ObstacleType == ObstacleType.Obstacle
                                 select s).Single();
@@ -59,7 +62,8 @@ public class AppEnvironment : MonoBehaviour
         StartCoroutine(this._ObstaclesSpawn.InstantiateObject());
     }
 
-    private void SetupNonObstacles(List<Spawn> spawners) {
+    private void SetupNonObstacles(List<Spawn> spawners)
+    {
         this._NonObstaclesSpawn = (from s in spawners
                                    where s.ObstacleType == ObstacleType.NonObstacle
                                    select s).Single();
@@ -67,9 +71,12 @@ public class AppEnvironment : MonoBehaviour
         StartCoroutine(this._NonObstaclesSpawn.InstantiateObject());
     }
 
-    private IEnumerator Timer(int value) {
-        while(true) {
-            for (int i = value; i >= 0; i--) {
+    private IEnumerator Timer(int value)
+    {
+        while(true)
+        {
+            for (int i = value; i >= 0; i--)
+            {
                 yield return new WaitForSeconds(1);
                 this.TimerText.text = i.ToString();
             }

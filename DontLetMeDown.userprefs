@@ -1,15 +1,6 @@
-﻿<Properties StartupConfiguration="{1A7EC08B-0E68-DE5C-E889-5B9C0B4A0FE4}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu/CheatCode.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Prefabs/Character.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/App Environment/AppEnvironment.cs" Line="15" Column="5" />
-      <File FileName="Assets/Scripts/App Environment/Environment.cs" Line="1" Column="14" />
-      <File FileName="Assets/Scripts/Spawn/Spawn.cs" Line="50" Column="52" />
-      <File FileName="Assets/Scripts/Menu/CheatCode.cs" Line="9" Column="9" />
-      <File FileName="Assets/Scripts/Menu/Menu.cs" Line="2" Column="1" />
-      <File FileName="Assets/Scripts/Character Controller/Player.cs" Line="43" Column="120" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{751DB977-A8D7-B54A-E0E0-F30C722AFF1D}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

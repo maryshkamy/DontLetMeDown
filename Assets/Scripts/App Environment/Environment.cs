@@ -21,11 +21,14 @@ public class Environment
     public int Gold = 0;
     public bool IsStart = false;
 
-    public bool IsPaused { 
-        get {
+    public bool IsPaused
+    { 
+        get
+        {
             return _IsPaused;
         }
-        set {
+        set
+        {
             AppEnvironment.Shared.GetComponent<Pause>().execute();
             this._IsPaused = value;
         }
@@ -41,7 +44,8 @@ public class Environment
 
     #region Constructor(s).
 
-    public Environment() {
+    public Environment()
+    {
         this.Obstacles = new List<GameObject>();
     }
 

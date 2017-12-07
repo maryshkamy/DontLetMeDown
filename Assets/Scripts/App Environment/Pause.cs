@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pause : MonoBehaviour {
-    public void execute() {
-        if (Time.timeScale == 0) {
+public class Pause : MonoBehaviour
+{
+    public void execute()
+    {
+        if (Time.timeScale == 0)
+        {
             Time.timeScale = 1;
             return;
         }

@@ -23,15 +23,20 @@ public class Spawn : MonoBehaviour {
     #region Unity Method(s).
 
     private void Start()
-    { }
+    {
+        
+    }
 
     #endregion
 
     #region Public Method(s).
 
-    public IEnumerator InstantiateObject() {
-        while(true) {
-            if (AppEnvironment.Shared.Environment.IsStart) {
+    public IEnumerator InstantiateObject()
+    {
+        while(true)
+        {
+            if (AppEnvironment.Shared.Environment.IsStart)
+            {
                 if (this._Prefabs.Count > 0)
                 {
                     this.Instatiated = this._Prefabs[UnityEngine.Random.Range(0, _Prefabs.Count)];
