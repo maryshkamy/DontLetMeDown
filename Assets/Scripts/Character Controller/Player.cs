@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour 
@@ -35,6 +36,8 @@ public class Player : MonoBehaviour
             AppEnvironment.Shared.Environment.IsPaused = !AppEnvironment.Shared.Environment.IsPaused;
             AppEnvironment.Shared.TimerText.gameObject.SetActive(true);
             AppEnvironment.Shared.TimerText.text = "Game Over";
+            AppEnvironment.Shared.Reload.GetComponent<Button>().enabled = true;
+            AppEnvironment.Shared.Reload.GetComponent<Image>().enabled = true;
         }
     }
 

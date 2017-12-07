@@ -16,6 +16,7 @@ public class AppEnvironment : MonoBehaviour
 
     public Environment Environment;
     public Text TimerText;
+    public Transform Reload;
 
     #endregion
 
@@ -35,6 +36,8 @@ public class AppEnvironment : MonoBehaviour
         this._SpawnMovement = this.GetComponent<SpawnMovement>();
         this.SetupObstacles(GetComponents<Spawn>().ToList());
         this.SetupNonObstacles(GetComponents<Spawn>().ToList());
+        this.Reload.GetComponent<Button>().enabled = false;
+        this.Reload.GetComponent<Image>().enabled = false;
         StartCoroutine(this.Timer(3));
 
     }
@@ -47,6 +50,17 @@ public class AppEnvironment : MonoBehaviour
                 this._SpawnMovement.Move(obj, this.Environment.ObstaclesVelocity * Time.deltaTime);
             }
         }
+    }
+
+    #endregion
+
+    #region Public Method(s)
+
+    public void ReloadGame()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+        Time.timeScale = 1;
+        
     }
 
     #endregion
